@@ -1,22 +1,14 @@
 // src/store/index.ts
 import { createStore } from 'vuex';
-
+import api from './api/product'
 export default createStore({
   state: {
-    count: 0
   },
   mutations: {
-    increment(state) {
-      state.count++;
-    }
   },
   actions: {
-    increment({ commit }) {
-      // @ts-ignore
-      commit('increment');
-    }
+    ...api,
   },
   getters: {
-    count: (state) => state.count
   }
 });
